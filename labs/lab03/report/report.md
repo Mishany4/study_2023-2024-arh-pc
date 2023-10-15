@@ -1,119 +1,314 @@
----
-## Front matter
-title: "Шаблон отчёта по лабораторной работе"
-subtitle: "Простейший вариант"
-author: "Дмитрий Сергеевич Кулябов"
+<meta http-equiv="Content-type" content="text/html;charset=utf-8">
 
-## Generic otions
-lang: ru-RU
-toc-title: "Содержание"
+---
+		title: "Отчет по лабораторной работы №3"
+		subtitle: "Архитектура компьютеров и Операционные системы"
+		author: "Ван Сихэм Франклин О' Нил Джон (Миша)"
+		group: "НПИбд-03-23"
+		date: "13/10/2023"
+---
+
+---
+## Generic options
+
+		lang: ru-RU
+		toc-title: "Содержание"
 
 ## Bibliography
-bibliography: bib/cite.bib
-csl: pandoc/csl/gost-r-7-0-5-2008-numeric.csl
+
+		bibliography: bib/cite.bib
+		csl: pandoc/csl/gost-r-7-0-5-2008-numeric.csl
 
 ## Pdf output format
-toc: true # Table of contents
-toc-depth: 2
-lof: true # List of figures
-lot: true # List of tables
-fontsize: 12pt
-linestretch: 1.5
-papersize: a4
-documentclass: scrreprt
+
+		toc: true # Table of contents
+		toc-depth: 2
+		lof: true # List of figures
+		lot: true # List of tables
+		fontsize: 12pt
+		linestretch: 1.5
+		papersize: a4
+		documentclass: scrreprt
+
 ## I18n polyglossia
-polyglossia-lang:
-  name: russian
-  options:
-	- spelling=modern
-	- babelshorthands=true
-polyglossia-otherlangs:
-  name: english
+
+		polyglossia-lang:
+			name: russian
+			options:
+				- spelling=modern
+				- babelshorthands=true
+		polyglossia-otherlangs:
+			name: english
+
 ## I18n babel
-babel-lang: russian
-babel-otherlangs: english
+
+		babel-lang: russian
+		babel-otherlangs: english
+
 ## Fonts
-mainfont: PT Serif
-romanfont: PT Serif
-sansfont: PT Sans
-monofont: PT Mono
-mainfontoptions: Ligatures=TeX
-romanfontoptions: Ligatures=TeX
-sansfontoptions: Ligatures=TeX,Scale=MatchLowercase
-monofontoptions: Scale=MatchLowercase,Scale=0.9
+
+		mainfont: DejaVuSerif
+		romanfont: Times New Roman
+		sansfont: DejaVuSans
+		monofont: DejaVuSansMono
+		mainfontoptions: Ligatures=TeX
+		romanfontoptions: Ligatures=TeX
+		sansfontoptions: Ligatures=TeX,Scale=MatchLowercase
+		monofontoptions: Scale=MatchLowercase,Scale=0.9
+
 ## Biblatex
-biblatex: true
-biblio-style: "gost-numeric"
-biblatexoptions:
-  - parentracker=true
-  - backend=biber
-  - hyperref=auto
-  - language=auto
-  - autolang=other*
-  - citestyle=gost-numeric
+
+		biblatex: true
+		biblio-style: "gost-numeric"
+		biblatexoptions:
+			- parentracker=true
+			- backend=biber
+			- hyperref=auto
+			- language=auto
+			- autolang=other*
+			- citestyle=gost-numeric
+
 ## Pandoc-crossref LaTeX customization
-figureTitle: "Рис."
-tableTitle: "Таблица"
-listingTitle: "Листинг"
-lofTitle: "Список иллюстраций"
-lotTitle: "Список таблиц"
-lolTitle: "Листинги"
+
+		figureTitle: "Рис."
+		tableTitle: "Таблица"
+		listingTitle: "Листинг"
+		lofTitle: "Список иллюстраций"
+		lotTitle: "Список таблиц"
+		lolTitle: "Листинги"
+
 ## Misc options
-indent: true
-header-includes:
-  - \usepackage{indentfirst}
-  - \usepackage{float} # keep figures where there are in the text
-  - \floatplacement{figure}{H} # keep figures where there are in the text
+
+		indent: true
+		header-includes:
+			- \usepackage{indentfirst}
+			- \usepackage{float} # keep figures where there are in the text
+			- \floatplacement{figure}{H} # keep figures where there are in the text
 ---
 
 # Цель работы
 
-Здесь приводится формулировка цели лабораторной работы. Формулировки
-цели для каждой лабораторной работы приведены в методических
-указаниях.
-
-Цель данного шаблона --- максимально упростить подготовку отчётов по
-лабораторным работам.  Модифицируя данный шаблон, студенты смогут без
-труда подготовить отчёт по лабораторным работам, а также познакомиться
-с основными возможностями разметки Markdown.
-
-# Задание
-
-Здесь приводится описание задания в соответствии с рекомендациями
-методического пособия и выданным вариантом.
+Целью работы является освоение процедуры оформления отчетов с помощью легковесного языка разметки Markdown.
 
 # Теоретическое введение
 
-Здесь описываются теоретические аспекты, связанные с выполнением работы.
+## Базовые сведения о Markdown
 
-Например, в табл. @tbl:std-dir приведено краткое описание стандартных каталогов Unix.
+Чтобы создать заголовок, используйте знак #, например:
 
-: Описание некоторых каталогов файловой системы GNU Linux {#tbl:std-dir}
+<h1>	This is heading 1 </h1> (#)
+<h2>	This is heading 2 </h2> (##)
+<h3>	This is heading 3 </h3> (###)
+<h4>	This is heading 4 </h4> (####)
+<hr>
 
-| Имя каталога | Описание каталога                                                                                                          |
-|--------------|----------------------------------------------------------------------------------------------------------------------------|
-| `/`          | Корневая директория, содержащая всю файловую                                                                               |
-| `/bin `      | Основные системные утилиты, необходимые как в однопользовательском режиме, так и при обычной работе всем пользователям     |
-| `/etc`       | Общесистемные конфигурационные файлы и файлы конфигурации установленных программ                                           |
-| `/home`      | Содержит домашние директории пользователей, которые, в свою очередь, содержат персональные настройки и данные пользователя |
-| `/media`     | Точки монтирования для сменных носителей                                                                                   |
-| `/root`      | Домашняя директория пользователя  `root`                                                                                   |
-| `/tmp`       | Временные файлы                                                                                                            |
-| `/usr`       | Вторичная иерархия для данных пользователя                                                                                 |
+- Чтобы задать для текста полужирное начертание, заключите его в двойные звездочки:
+This text is **bold**. (** **)<br>
+- Чтобы задать для текста курсивное начертание, заключите его в одинарные звездочки:
+This text is *italic*. (* *)<br>
+- Чтобы задать для текста полужирное и курсивное начертание, заключите его в тройные звездочки:
+- This is text is both ***bold and italic***. (*** ***)<br>
+<hr>
 
-Более подробно об Unix см. в [@gnu-doc:bash;@newham:2005:bash;@zarrelli:2017:bash;@robbins:2013:bash;@tannenbaum:arch-pc:ru;@tannenbaum:modern-os:ru].
+Блоки цитирования создаются с помощью символа >:
 
-# Выполнение лабораторной работы
+> The drought had lasted now for ten million years, and the reign of the
+		terrible lizards had long since ended. Here on the Equator, in the
+		continent which would one day be known as Africa, the battle for existence
+		had reached a new climax of ferocity, and the victor was not yet in sight.
+		In this barren and desiccated land, only the small or the swift or the
+		fierce could flourish, or even hope to survive.
 
-Описываются проведённые действия, в качестве иллюстрации даётся ссылка на иллюстрацию (рис. @fig:001).
+Упорядоченный список можно отформатировать с помощью соответствующих цифр:
 
-![Название рисунка](image/placeimg_800_600_tech.jpg){#fig:001 width=70%}
+1.		First instruction 
+	2. 		Sub-instruction
+	3. 		Sub-instruction
+4. 		Second instruction
 
-# Выводы
+Чтобы вложить один список в другой, добавьте отступ для элементов дочернего списка:
 
-Здесь кратко описываются итоги проделанной работы.
+1. 		First instruction
+2. 		Second instruction
+3. 		Third instruction
 
-# Список литературы{.unnumbered}
+Неупорядоченный (маркированный) список можно отформатировать с помощью звездочек или тире:
 
-::: {#refs}
-:::
+	* List item 1
+	* List item 2
+	* List item 3
+
+Чтобы вложить один список в другой, добавьте отступ для элементов дочернего списка:
+
+	- List item 1
+	- List item A
+	- List item B
+	- List item 2
+
+Синтаксис Markdown для встроенной ссылки состоит из части [link text], представляющей текст гиперссылки, и части (file-name.md) – URL-адреса или имени файла, на который дается ссылка: [link text](file-name.md) или
+[link text](http://example.com/ "Необязательная подсказка")
+
+Markdown поддерживает как встраивание фрагментов кода в предложение, так и их размещение между предложениями в виде отдельных огражденных блоков. Огражденные блоки кода — это простой способ выделить синтаксис для фрагментов кода. Общий формат огражденных блоков кода:
+
+```
+	language
+	your code goes in here
+```
+
+## Оформление формул в Markdown
+
+Внутритекстовые формулы делаются аналогично формулам LaTeX. Например, формула
+sin2 (x) + cos2 (x) = 1 запишется как
+
+$$
+\sin^2 (x) + \cos^2 (x) = 1
+$$
+
+Выключение формулы:
+
+				sin2 (x) + cos2 (x) = 1 				(3.1)
+
+со ссылкой в тексте «Смотри формулу ({-eq. 3.1}).» записывается как
+
+$$
+\sin^2 (x) + \cos^2 (x) = 1
+$${#eq:eq1}
+
+Смотри формулу (`[-@eq:eq1]`).
+
+## Оформление изображений в Markdown
+
+В Markdown вставить изображение в документ можно с помощью непосредственного
+
+указания адреса изображения. Синтаксис данной команды выглядит следующим образом:
+
+``` 
+![Подпись к рисунку](путь/к/изображению.jpg){#fig:fig1 width=70%}
+```
+
+Здесь:
+
+* в квадратных скобках указывается подпись к изображению;
+
+* в круглых скобках указывается URL-адрес или относительный путь изображения, а также (необязательно) всплывающую подсказку, заключённую в двойные или одиночные кавычки.
+
+* в фигурных скобках указывается идентификатор изображения (#fig:fig1) для ссылки на него по тексту и размер изображения относительно ширины страницы (width=90%)
+
+Ссылка на изображение (рис. 3.1) может быть оформлена следующим образом: 
+```
+(рис. [-@fig:fig1])
+```
+
+## Обработка файлов в формате Markdown
+
+![markdown](image/markdown1.jpg)
+
+<hr>
+
+Преобразовать файл README.md можно следующим образом:
+
+- pandoc README.md -o README.pdf<br>
+
+или так
+
+- pandoc README.md -o README.docx
+
+Для компиляции отчетов по лабораторным работам предлагается использовать следующий Makefile
+
+FILES = $(patsubst %.md, %.docx, $(wildcard *.md))<br>
+
+FILES += $(patsubst %.md, %.pdf, $(wildcard *.md))<br>
+
+LATEX_FORMAT =
+
+FILTER = --filter pandoc-crossref
+
+%.docx: %.md
+
+		-pandoc "$<" $(FILTER) -o "$@"
+
+%.pdf: %.md
+
+		-pandoc "$<" $(LATEX_FORMAT) $(FILTER) -o "$@"
+
+all: $(FILES)
+
+		@echo $(FILES)
+
+clean:
+
+		-rm $(FILES) *~
+
+## Техническое обеспечение
+
+При выполнении лабораторной работы на своей технике необходимо установить следующее ПО:
+
+* TeX Live (https://www.tug.org/texlive/) последней версии.<br>
+
+![TexLive установлен](image/TexLive_установлен.jpg)<hr>
+* Pandoc (https://pandoc.org/).<br>
+
+![Pandoc установлен](image/Pandoc_установлен.jpg)<hr>
+
+# Порядок выполнения лабораторной работы
+
+1. Откройте терминал
+2. Перейдите в каталог курса сформированный при выполнении лабораторной работы No2:
+
+```
+cd ~/work/study/2023-2024/"Архитектура компьютера"/arch-pc/
+```
+
+Обновите локальный репозиторий, скачав изменения из удаленного репозитория с помощью команды
+```
+git pull
+```
+
+![Команда 'git pull'](image/git_pull.jpg)<hr>
+
+3. Перейдите в каталог с шаблоном отчета по лабораторной работе No 3
+```
+cd ~/work/study/2023-2024/"Архитектура компьютера"/arch-pc/labs/lab03/report
+```
+
+4. Проведите компиляцию шаблона с использованием Makefile. Для этого введите команду
+```
+make
+```
+
+При успешной компиляции должны сгенерироваться файлы report.pdf и report.docx.
+Откройте и проверьте корректность полученных файлов.
+
+![Команда 'make'](image/make.jpg)<hr>
+
+5. Удалите полученный файлы с использованием Makefile. Для этого введите команду
+```
+make clean
+```
+
+Проверьте, что после этой команды файлы report.pdf и report.docx были удалены.
+
+![Команда 'make clean'](image/make_clean.jpg)<hr>
+
+6. Откройте файл report.md c помощью любого текстового редактора, например gedit
+```
+gedit report.md
+```
+
+![Команда 'gedit'](image/gedit_md.jpg)<hr>
+![report.md файл в Markdown редактор](image/readme_editor.jpg)<hr>
+
+7. Заполните отчет и скомпилируйте отчет с использованием Makefile. Проверьте кор-
+ректность полученных файлов. (Обратите внимание, для корректного отображения
+скриншотов они должны быть размещены в каталоге image)
+
+![Каталог image](image/фотки_добавлены_image.jpg)<hr>
+![Заполнение отчёта](image/заполнение_отчёта.jpg)<hr>
+
+8. Загрузите файлы на Github.
+```
+cd ~/work/study/2023-2024/"Архитектура компьютера"/arch-pc
+git add .
+git commit -am 'feat(main): add files lab-3'
+git push
+```
