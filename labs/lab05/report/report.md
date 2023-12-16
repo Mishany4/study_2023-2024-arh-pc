@@ -1,8 +1,13 @@
+<meta charset="UTF-8">
+
 ---
 ## Front matter
 title: "Лабораторная работа №5 <p>Midnight Commander</p>"
 subtitle: "Архитектура компьютера и Операционные системы"
 author: "Ван Сихэм Франклин О Нил Джон"
+output:
+  pdf_document:
+    pandoc_args: ["--lua-filter=color-text-span.lua"]
 
 
 ## Generic otions
@@ -38,11 +43,16 @@ babel-lang: russian
 babel-otherlangs: english
 
 ## Fonts
-mainfont: PT Serif
+mainfont: DejaVuSerif
 romanfont: PT Serif
 sansfont: PT Sans
 monofont: PT Mono
-mainfontoptions: Ligatures=TeX
+mainfontoptions: 
+ - Extension=.ttf
+ - UprightFont=*
+ - BoldFont=*-Bold
+ - ItalicFont=*-Italic
+ - BoldItalicFont=*-BoldItalic
 romanfontoptions: Ligatures=TeX
 sansfontoptions: Ligatures=TeX,Scale=MatchLowercase
 monofontoptions: Scale=MatchLowercase,Scale=0.9
@@ -104,6 +114,8 @@ pandoc-tablenos:
 reader: markdown
 writer: html5
 
+
+
 ---
 
 
@@ -121,11 +133,13 @@ Midnight Commander (или просто mc) — это программа, ко�
 
 # Порядок выполнения лабораторной работы
 
-1. <ins>Откройте Midnight Commander</ins>
-```python
-print(mishanya4u@Legenda in ~ via C v13.2.1-gcc)
->> mc
-```
+1. <ins>Откройте Midnight Commander</ins> <br>
+
+<font color="red">mishanya4u@Legenda in ~ via C v13.2.1-gcc</font> 
+<br>
+&#8594; mc
+
+
 
 
 ![команда чтобы открыть Midnight Commander](image/lab5-1.png)<hr><hr>
@@ -137,9 +151,7 @@ print(mishanya4u@Legenda in ~ via C v13.2.1-gcc)
 <br>
 
 
-2. <p> 
-<ins>Пользуясь клавишами &#8593; , &#8595; и Enter перейдите в каталог ~/work/arch-pc созданный при выполнении лабораторной работы №4.</ins> 
-</p>
+2. <ins>Пользуясь клавишами &#8593; , &#8595; и Enter перейдите в каталог ~/work/arch-pc созданный при выполнении лабораторной работы №4.</ins> 
 
 
 ![Перешёл в каталол ~/work/arch-pc](image/lab5-3.png)<hr><hr>
